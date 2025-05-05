@@ -101,6 +101,7 @@ class CalculatorTest {
         assertEquals(expectedValue, calculator.evaluateMathExpression(expression));
     }
 
+// Tests facultatifs
     @ParameterizedTest(name = "{index} => input={0}, expected={1}")
     @CsvSource({
             "'-15', -15",
@@ -108,7 +109,6 @@ class CalculatorTest {
     })
     void basicNegativeInteger(String expression, double expectedValue) {
         Calculator calculator = new Calculator();
-
         assertEquals(expectedValue, calculator.evaluateMathExpression(expression));
     }
 

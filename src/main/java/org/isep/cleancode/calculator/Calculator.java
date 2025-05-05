@@ -30,7 +30,7 @@ public class Calculator {
         if (currentNumber.length() > 0) {
             expressionList.add(currentNumber.toString());
         }
-
+        System.out.println(expressionList);
         return expressionList;
     }
 
@@ -68,16 +68,11 @@ public class Calculator {
             case '-' -> left - right;
             case '*' -> left * right;
             case '/' -> left / right;
-            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
         };
     }
 
     private static boolean isOperator(char ch) {
         return ch == '+' || ch == '-' || ch == '*' || ch == '/';
-    }
-
-    public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-        System.out.println(calculator.evaluateMathExpression("3 + 5 * 2 - 8 / 4")); // Exemple de test
     }
 }
